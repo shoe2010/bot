@@ -6,7 +6,12 @@ import asyncio
 import json
 
 import requests
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from telegram import Update
 from telegram.ext import (
     ApplicationBuilder,
@@ -17,8 +22,6 @@ from telegram.ext import (
     filters,
 )
 
-load_dotenv()
-
 logging.basicConfig(
     format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
     level=logging.INFO,
@@ -26,7 +29,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # CONFIGURACIÓN GENERAL
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8946061361:AAGj1uqN4pnhUlW9WCi4rs5AxC81qYJUsGs")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8794814572:AAGTaCtmt19aqb5Dap7T6LGoRB732Rb21yM")
 
 BANKVALIDOR_URL = os.getenv("BANKVALIDOR_URL", "https://bankvalidor.com/api/v1/validate/us")
 BANKVALIDOR_ORIGIN = os.getenv("BANKVALIDOR_ORIGIN", "https://bankvalidor.com")
@@ -39,7 +42,7 @@ ADMIN_IDS = {6279771747, 7404196758}
 # Datos del negocio
 PRECIO_POR_CUENTA = 2.75
 MINIMO_RECARGA = 20.0
-SOPORTE_RECARGAS = "@d333x\_cash o @isamoney01"
+SOPORTE_RECARGAS = r"@d333x\_cash o @isamoney01"
 
 ROUTING_RE = re.compile(r"^\d{9}$")
 PREFIJOS_OBSERVADOS = [237, 428, 437, 441]
