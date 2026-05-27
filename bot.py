@@ -19,7 +19,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # CONFIGURACIÓN GENERAL
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8946061361:AAGj1uqN4pnhUlW9WCi4rs5AxC81qYJUsGs")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8794814572:AAGTaCtmt19aqb5Dap7T6LGoRB732Rb21yM")
 
 BANKVALIDOR_URL = os.getenv("BANKVALIDOR_URL", "https://bankvalidor.com/api/v1/validate/us")
 BANKVALIDOR_ORIGIN = os.getenv("BANKVALIDOR_ORIGIN", "https://bankvalidor.com")
